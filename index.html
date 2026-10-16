@@ -91,7 +91,8 @@
     h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', Helvetica, sans-serif; }
     body { font-family: 'Montserrat', Helvetica, Arial, sans-serif; }
     main.container { max-width: 820px; }
-    .masthead { text-align: center; padding-top: 18px; }
+    .masthead { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; text-align: left; padding-top: 18px; }
+    .masthead .mh-left { flex: 1 1 auto; min-width: 260px; }
     h1.name { font-weight: 700; font-size: 2.4rem; color: #777; margin: 0 0 2px; }
     .masthead .role { color: #999; font-size: 1rem; margin: 0; }
     .masthead .icons { margin: 14px 0 6px; }
@@ -117,6 +118,7 @@
 <body>
   <main class="container">
     <div class="masthead">
+      <div class="mh-left">
       <h1 class="name text-muted">Laure Berti-Equille</h1>
       <p class="role">Research Director (DR1) &middot; IRD, ESPACE-DEV &middot; Montpellier, France</p>
       <p class="icons">
@@ -130,6 +132,7 @@
         <a href="https://www.lens.org/lens/profile/710564084/scholar" target="_blank" title="Lens.org"><img src="website/img/lens.png" alt="Lens.org" style="height:1.4rem;width:1.4rem;vertical-align:middle;margin-bottom:5px"></a>
         <a href="https://medium.com/@laure.berti2" target="_blank" title="Medium"><i class="fa fa-medium"></i></a>
       </p>
+      </div>
       <a href="https://en.ird.fr/" target="_blank" class="ird"><img width="80" src="website/img/logo-ird.png" alt="IRD"></a>
     </div>
 
