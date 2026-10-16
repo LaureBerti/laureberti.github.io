@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications by Type — Laure Berti-Équille</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+</head>
+<body>
+
+<style>
+  :root{ --bg:#f6f4ef; --panel:#fffdfa; --ink:#211e19; --muted:#6c655c; --line:#e7e1d7; --hole:#fbfaf7; }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+    --bg:#14130f; --panel:#1c1a15; --ink:#f0ece3; --muted:#a49b8d; --line:#312d25; --hole:#100f0c; } }
+  :root[data-theme="dark"]{ --bg:#14130f; --panel:#1c1a15; --ink:#f0ece3; --muted:#a49b8d; --line:#312d25; --hole:#100f0c; }
+  *{ box-sizing:border-box; }
+  .sb-wrap{ background:var(--bg); color:var(--ink); font:16px/1.5 "IBM Plex Sans",system-ui,sans-serif; padding:32px 20px 40px; }
+  .sb-inner{ max-width:780px; margin:0 auto; }
+  .sb-eyebrow{ font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin:0 0 6px; }
+  .sb-title{ font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:clamp(26px,4.5vw,40px); line-height:1.05; margin:0 0 6px; text-wrap:balance; }
+  .sb-sub{ color:var(--muted); margin:0 0 22px; font-size:15px; }
+  .sb-chart{ display:flex; gap:28px; align-items:center; justify-content:center; flex-wrap:wrap; }
+  .sb-figure{ position:relative; flex:1 1 340px; min-width:280px; max-width:540px; }
+  svg.sb{ display:block; width:100%; max-width:540px; margin:0 auto; height:auto; }
+  svg.sb path{ transition:opacity .12s; }
+  svg.sb.dim path.arc{ opacity:.30; }
+  svg.sb path.arc.hot{ opacity:1; }
+  .sb-center-n{ font-family:"Fraunces",Georgia,serif; font-weight:600; fill:var(--ink); }
+  .sb-center-l{ fill:var(--muted); font-size:13px; letter-spacing:.02em; }
+  .sb-cnt{ fill:#fff; font-weight:600; paint-order:stroke; }
+  .sb-tip{ position:absolute; pointer-events:none; z-index:5; max-width:240px; background:var(--panel); color:var(--ink);
+    border:1px solid var(--line); border-radius:9px; padding:8px 11px; font-size:13px; line-height:1.35;
+    box-shadow:0 8px 30px rgba(0,0,0,.16); opacity:0; transform:translateY(4px); transition:opacity .1s; }
+  .sb-tip.on{ opacity:1; transform:none; } .sb-tip b{ font-weight:600; }
+  .sb-tip .k{ color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.08em; }
+  .sb-legend{ display:flex; flex-direction:column; gap:7px; margin:0; flex:0 1 250px; min-width:220px; }
+  .sb-leg{ display:flex; align-items:center; gap:10px; padding:6px 10px; border:1px solid var(--line); border-radius:9px; background:var(--panel); }
+  .sb-leg .sw{ width:14px; height:14px; border-radius:4px; flex:none; }
+  .sb-leg .nm{ flex:1; font-size:14px; } .sb-leg .ct{ font-variant-numeric:tabular-nums; font-weight:600; color:var(--muted); }
+  .sb-scope{ display:flex; gap:16px; justify-content:center; margin:14px auto 0; font-size:12.5px; color:var(--muted); }
+  .sb-scope span{ display:inline-flex; align-items:center; gap:6px; }
+  .sb-scope i{ width:22px; height:11px; border-radius:3px; display:inline-block; }
+  .sb-foot{ text-align:center; color:var(--muted); font-size:12.5px; margin:16px auto 0; max-width:600px; }
+  .sb-foot a{ color:#0e7490; }
+</style>
+
+<div class="sb-wrap"><div class="sb-inner">
+  <h1 class="sb-title">Publications by type</h1>
+  <div class="sb-chart">
+    <div class="sb-figure">
+      <svg class="sb" viewBox="0 0 780 600" role="img" aria-label="Sunburst of publications by type and scope"></svg>
+      <div class="sb-tip" id="sbtip"></div>
+    </div>
+    <div class="sb-legend" id="sblegend"></div>
+  </div>
+  <div class="sb-scope"><span><i style="background:#94a3b8"></i>outer, lighter = International</span><span><i style="background:#334155"></i>outer, darker = National</span></div>
+  <p class="sb-foot">Segment size = number of publications. Type &amp; scope inferred from venue; an approximate portfolio view.</p>
+</div></div>
+<script>
+const DATA = [{"type": "Journal", "short": "Journal", "total": 22, "base": "#0e7490", "intl": "#7fc4d4", "natl": "#0a5568", "kids": [{"scope": "International", "n": 20}, {"scope": "National", "n": 2}]}, {"type": "Conference", "short": "Conference", "total": 104, "base": "#4338ca", "intl": "#a5b4fc", "natl": "#312e81", "kids": [{"scope": "International", "n": 83}, {"scope": "National", "n": 21}]}, {"type": "Workshop", "short": "Workshop", "total": 25, "base": "#b45309", "intl": "#e8bd82", "natl": "#7c3a06", "kids": [{"scope": "International", "n": 21}, {"scope": "National", "n": 4}]}, {"type": "Proceedings (edited)", "short": "Proceedings", "total": 10, "base": "#7c3aed", "intl": "#c4b5fd", "natl": "#5b21b6", "kids": [{"scope": "International", "n": 6}, {"scope": "National", "n": 4}]}, {"type": "Book / Chapter", "short": "Book/Chapter", "total": 13, "base": "#be123c", "intl": "#f0a8b6", "natl": "#881132", "kids": [{"scope": "International", "n": 10}, {"scope": "National", "n": 3}]}, {"type": "Poster", "short": "Poster", "total": 6, "base": "#15803d", "intl": "#86c9a0", "natl": "#0d5026", "kids": [{"scope": "International", "n": 5}, {"scope": "National", "n": 1}]}, {"type": "Thesis / HDR", "short": "Thesis/HDR", "total": 2, "base": "#475569", "intl": "#a3aebd", "natl": "#2f3a48", "kids": [{"scope": "International", "n": 1}, {"scope": "National", "n": 1}]}];
+const svg=document.querySelector("svg.sb"), NS="http://www.w3.org/2000/svg";
+const CX=390,CY=300,HOLE=66,R1=150,R2=205;
+const TOTAL=DATA.reduce((s,d)=>s+d.total,0), TAU=Math.PI*2, START=-Math.PI/2;
+const cssv=(v)=>getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const pol=(r,a)=>[CX+r*Math.cos(a),CY+r*Math.sin(a)];
+function sector(r0,r1,a0,a1){const large=(a1-a0)>Math.PI?1:0;
+  const [x0,y0]=pol(r1,a0),[x1,y1]=pol(r1,a1),[x2,y2]=pol(r0,a1),[x3,y3]=pol(r0,a0);
+  return `M${x0} ${y0}A${r1} ${r1} 0 ${large} 1 ${x1} ${y1}L${x2} ${y2}A${r0} ${r0} 0 ${large} 0 ${x3} ${y3}Z`;}
+function mk(t,a){const e=document.createElementNS(NS,t);for(const k in a)e.setAttribute(k,a[k]);return e;}
+const tip=document.getElementById("sbtip");
+function showTip(h,ev){tip.innerHTML=h;tip.classList.add("on");
+  const f=svg.closest(".sb-figure").getBoundingClientRect();
+  let x=ev.clientX-f.left+14,y=ev.clientY-f.top+14; x=Math.min(x,f.width-tip.offsetWidth-8);
+  tip.style.left=x+"px";tip.style.top=y+"px";}
+const hideTip=()=>tip.classList.remove("on");
+
+let a=START;
+DATA.forEach(d=>{
+  const sweep=d.total/TOTAL*TAU, a0=a, a1=a+sweep; a=a1; const mid=(a0+a1)/2;
+  // inner type arc
+  const inner=mk("path",{d:sector(HOLE,R1,a0,a1),fill:d.base,class:"arc",stroke:cssv("--panel"),"stroke-width":"2"});
+  inner.addEventListener("mousemove",e=>{svg.classList.add("dim");inner.classList.add("hot");
+    showTip(`<b>${d.type}</b><br><span class="k">${d.total} publications</span>`,e);});
+  inner.addEventListener("mouseleave",()=>{svg.classList.remove("dim");inner.classList.remove("hot");hideTip();});
+  svg.appendChild(inner);
+  // total count INSIDE the inner segment
+  const [icx,icy]=pol((HOLE+R1)/2,mid);
+  const itot=mk("text",{x:icx,y:icy+5,"text-anchor":"middle",class:"sb-cnt","font-size":"15",
+    stroke:d.base,"stroke-width":"2.5"}); itot.textContent=d.total; svg.appendChild(itot);
+  // outer scope arcs (International lighter, National darker)
+  let b=a0;
+  d.kids.forEach(k=>{
+    const s=k.n/TOTAL*TAU, b0=b, b1=b+s; b=b1;
+    const fill = k.scope==="International"?d.intl:d.natl;
+    const o=mk("path",{d:sector(R1+2,R2,b0,b1),fill:fill,class:"arc",stroke:cssv("--panel"),"stroke-width":"1.2"});
+    o.addEventListener("mousemove",e=>{svg.classList.add("dim");o.classList.add("hot");
+      showTip(`<b>${d.type}</b><br><span class="k">${k.scope}</span> · ${k.n}`,e);});
+    o.addEventListener("mouseleave",()=>{svg.classList.remove("dim");o.classList.remove("hot");hideTip();});
+    svg.appendChild(o);
+    if(s>0.13){ const [mx,my]=pol((R1+2+R2)/2,(b0+b1)/2);
+      const tl=mk("text",{x:mx,y:my+4,"text-anchor":"middle",class:"sb-cnt","font-size":"12",
+        stroke:fill,"stroke-width":"2.5"}); tl.textContent=k.n; svg.appendChild(tl); }
+  });
+  // outside label: type short name + total, with a leader line
+  const [ax,ay]=pol(R2+4,mid),[bx,by]=pol(R2+20,mid);
+  const right=Math.cos(mid)>=0, tx=bx+(right?8:-8);
+  svg.appendChild(mk("line",{x1:ax,y1:ay,x2:bx,y2:by,stroke:d.base,"stroke-width":"1.2",opacity:"0.55"}));
+  svg.appendChild(mk("line",{x1:bx,y1:by,x2:tx,y2:by,stroke:d.base,"stroke-width":"1.2",opacity:"0.55"}));
+  const lbl=mk("text",{x:tx+(right?3:-3),y:by+4,"text-anchor":right?"start":"end","font-size":"13","font-weight":"600",fill:d.base});
+  lbl.textContent=d.type; svg.appendChild(lbl);          // FULL name only outside; number is inside
+});
+svg.appendChild(mk("circle",{cx:CX,cy:CY,r:HOLE-2,fill:cssv("--hole")}));
+const cn=mk("text",{x:CX,y:CY-2,"text-anchor":"middle",class:"sb-center-n","font-size":"38"}); cn.textContent=TOTAL;
+const cl=mk("text",{x:CX,y:CY+19,"text-anchor":"middle",class:"sb-center-l"}); cl.textContent="publications";
+svg.appendChild(cn); svg.appendChild(cl);
+const leg=document.getElementById("sblegend");
+DATA.forEach(d=>{const el=document.createElement("div");el.className="sb-leg";
+  el.innerHTML=`<span class="sw" style="background:${d.base}"></span><span class="nm">${d.type}</span><span class="ct">${d.total}</span>`;
+  leg.appendChild(el);});
+</script>
+
+</body>
+</html>

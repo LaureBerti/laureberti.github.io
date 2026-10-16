@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizations — Laure Berti-Equille</title>
+  <meta name="description" content="Interactive visualizations of Laure Berti-Equille's research: publications by topic and by type, a publication timeline, and the co-author network.">
+  <meta name="author" content="Laure Berti-Equille">
+  <link rel="canonical" href="https://laureberti.github.io/website/visualizations.html">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{ --bg:#faf9f5; --panel:#fff; --ink:#1f1c17; --muted:#6c655c; --line:#e7e1d7; --accent:#0e7490; }
+    *{ box-sizing:border-box; }
+    body{ margin:0; background:var(--bg); color:var(--ink);
+      font:16px/1.55 "IBM Plex Sans",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif; }
+    .wrap{ max-width:1180px; margin:0 auto; padding:40px 20px 72px; }
+    a{ color:var(--accent); text-decoration:none; } a:hover{ text-decoration:underline; }
+    nav.top{ font-size:.92rem; margin-bottom:22px; color:var(--muted); }
+    h1{ font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:clamp(28px,4vw,42px);
+      margin:0 0 6px; letter-spacing:-.01em; }
+    .lede{ color:var(--muted); margin:0 0 26px; max-width:70ch; }
+    .jump{ display:flex; flex-wrap:wrap; gap:10px; margin:0 0 34px; }
+    .jump a{ border:1px solid var(--line); background:var(--panel); border-radius:999px;
+      padding:7px 15px; font-size:.9rem; color:var(--ink); }
+    .jump a:hover{ border-color:var(--accent); color:var(--accent); text-decoration:none; }
+    .viz{ margin:0 0 40px; scroll-margin-top:20px; }
+    .viz h2{ font-family:"Fraunces",Georgia,serif; font-weight:600; font-size:1.5rem; margin:0 0 4px; }
+    .viz p.sub{ color:var(--muted); margin:0 0 14px; font-size:.95rem; }
+    .frame{ position:relative; background:var(--panel); border:1px solid var(--line);
+      border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(0,0,0,.04); }
+    .frame iframe{ display:block; width:100%; border:0; }
+    .open{ font-size:.86rem; }
+    footer{ border-top:1px solid var(--line); margin-top:10px; padding-top:18px;
+      color:var(--muted); font-size:.85rem; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <nav class="top"><a href="./index.html">&larr; Home</a> &middot; <a href="./publications.html">Publications</a></nav>
+    <h1>Visualizations</h1>
+    <p class="lede">An interactive view of the research portfolio of Laure Berti-Equille &mdash;
+      182 publications across six themes, by type, over time, and across co-authors.</p>
+
+    <div class="jump">
+      <a href="#topic">Publications by topic</a>
+      <a href="#type">Publications by type</a>
+      <a href="#timeline">Publication timeline</a>
+      <a href="#network">Collaborator network</a>
+    </div>
+
+    <section class="viz" id="topic">
+      <h2>Publications by topic</h2>
+      <p class="sub">Inner ring: six research themes. Outer ring: individual papers &mdash; hover for the venue and title, click to open the PDF.</p>
+      <div class="frame"><iframe src="./sunburst.html" title="Publications by topic" height="720" loading="lazy"></iframe></div>
+      <p class="open"><a href="./sunburst.html" target="_blank">Open full page &nearr;</a></p>
+    </section>
+
+    <section class="viz" id="type">
+      <h2>Publications by type</h2>
+      <p class="sub">Inner ring: publication type. Outer ring: International vs National. Hover for the split.</p>
+      <div class="frame"><iframe src="./sunburst-types.html" title="Publications by type" height="720" loading="lazy"></iframe></div>
+      <p class="open"><a href="./sunburst-types.html" target="_blank">Open full page &nearr;</a></p>
+    </section>
+
+    <section class="viz" id="timeline">
+      <h2>Publication timeline</h2>
+      <p class="sub">Each bubble is a paper &mdash; positioned by year and number of authors, sized by citations, coloured by topic.</p>
+      <div class="frame"><iframe src="./bubble-timeline.html" title="Publication timeline" height="820" loading="lazy"></iframe></div>
+      <p class="open"><a href="./bubble-timeline.html" target="_blank">Open full page &nearr;</a></p>
+    </section>
+
+    <section class="viz" id="network">
+      <h2>Collaborator network</h2>
+      <p class="sub">The co-author graph &mdash; each node a collaborator, sized by shared publications.</p>
+      <div class="frame"><iframe src="./network.html" title="Collaborator network" height="820" loading="lazy"></iframe></div>
+      <p class="open"><a href="./network.html" target="_blank">Open full page &nearr;</a></p>
+    </section>
+
+    <footer>Laure Berti-Equille &middot; Research Director (DR1), IRD. Source: <a href="./publications.html">publications</a>.</footer>
+  </main>
+</body>
+</html>
