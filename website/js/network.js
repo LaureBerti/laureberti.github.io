@@ -1,5 +1,32 @@
 const referencesBibliographiques = [
   {
+    titre: "Weaving Indigenous Sciences (PNAS) 2026",
+    auteurs: [
+      "Rafael L. G. Raimundo",
+      "Carolina Levis",
+      "Silvio S. Barreto",
+      "Bárbara N. Flores Borum-Kren",
+      "Victor J. L. Felix",
+      "Justino S. Rezende",
+      "Francy Baniwa",
+      "Elizângela C. A. Silva",
+      "Aline Rochedo Pachamama (Churiah Puri)",
+      "Cristina Caldas",
+      "Mariana F. Cassino",
+      "Alyne Costa",
+      "André B. Junqueira",
+      "Alex Potiguara",
+      "Ezequiel M. Potiguara",
+      "Clarinda Sateré",
+      "Elison F. Tiago Terena",
+      "João Rivelino R. Barreto Yúpuri",
+      "Guilherme A. Dias",
+      "Laure Berti-Equille",
+      "João Paulo Lima Barreto",
+    ],
+  },
+
+  {
     titre: "Machine Learning and Principles and Prac 2026",
     auteurs: [
       "Sara Mobsite",
